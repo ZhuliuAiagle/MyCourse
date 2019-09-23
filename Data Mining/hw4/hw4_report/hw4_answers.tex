@@ -1,0 +1,231 @@
+%
+% 6.006 problem set 5
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{trees}
+
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{caption}
+\usepackage{subfigure}
+\captionsetup{hypcap=true}
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer:}
+}
+
+\newcommand{\collaborators}{ \textbf{Collaborators:}
+%%% COLLABORATORS START %%%
+
+\tabT Name: Shen Zijin
+
+\tabT Student ID: 3160104734
+%%% COLLABORATORS END %%%
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{assets/1-1.eps}
+	\caption{Raw kmeans.}
+	\label{figure1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{assets/1-2.eps}
+	\caption{Spectral Clustering.}
+	\label{figure2}
+\end{figure}
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+After examining the efficiency of both, I decided to solve the generalized eigenvalues directly without processing the Laplacian matrix.
+We set WeightMode to 'Binary', and $k$ to 8,then we find that
+\\ if we choose raw Kmeans, accuracy is 0.52133, NMI is 0.39358;
+\\ if we choose Spetral Clustering, accuracy is 0.78104, NMI is 0.43346.
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+\newcommand{\answerIIa}{ \answer
+%%% PROBLEM 2(a) ANSWER START %%%
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/1.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-1.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-2.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/3.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-3.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/4.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-4.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/5.png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-5.eps}
+\end{figure}
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+
+
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+\\ 
+i.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.1]{assets/2-b-1.eps}
+	\caption{Eigenfaces}
+	\label{figure2}
+\end{figure}
+ii.
+\begin{enumerate}
+	\item Testing Error rate with dimension 8 is $24.5\%$
+	\item Testing Error rate with dimension 16 is $20.0\%$
+	\item Testing Error rate with dimension 32 is $18.0\%$
+	\item Testing Error rate with dimension 64 is $15.0\%$
+	\item Testing Error rate with dimension 128 is $15.0\%$
+\end{enumerate}
+
+iii.\\
+Answer: Yes. To some extent, it prevents the loss of information. But the loss is not important because it has no significant performance impact.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-b-8.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-b-16.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-b-32.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-b-64.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{assets/2-b-128.eps}
+\end{figure}
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+
+
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% Fill these in!
+\newcommand{\theproblemsetnum}{4}
+\newcommand{\releasedate}{June 10, 2019}
+\newcommand{\partaduedate}{Final Exam}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Homework \theproblemsetnum}{\releasedate}
+
+%\textbf{Both theory and programming questions} are due {\bf \partaduedate} at
+%{\bf 11:59PM}.
+%
+\collaborators
+%Please download the .zip archive for this problem set, and refer to the
+%\texttt{README.txt} file for instructions on preparing your solutions.
+%
+%We will provide the solutions to the problem set 10 hours after the problem set
+%is due. You will have to read the solutions, and write a brief \textbf{grading
+%explanation} to help your grader understand your write-up. You will need to
+%submit the grading explanation by \textbf{Thursday, November 3rd, 11:59PM}. Your
+%grade will be based on both your solutions and the grading explanation.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \textbf{Spectral Clustering}
+
+In this problem, we will try a dimensionality reduction based clustering algorithm – Spectral
+Clustering.
+\begin{problemparts}
+\problempart 
+We will first experiment Spectral Clustering on synthesis data
+\answerIa
+
+\problempart
+Now let us try Spectral Clustering on real-world data.
+\answerIb
+
+\end{problemparts}
+
+\problem \textbf{Principal Component Analysis}
+ Let us deepen our understanding of PCA by the following problems.
+\begin{problemparts}
+\problempart
+Your task is to implement \textit{hack\_pca.m} to recover the rotated CAPTCHA image using PCA.
+
+
+\answerIIa
+
+\problempart Now let us apply PCA to a face image dataset.
+
+\answerIIb
+
+
+\end{problemparts}
+
+
+
+\end{problems}
+\end{document}
