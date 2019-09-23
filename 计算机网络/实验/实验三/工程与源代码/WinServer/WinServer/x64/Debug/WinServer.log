@@ -1,0 +1,14 @@
+﻿  Server.cpp
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(23): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(36): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(46): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(143): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(168): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(241): warning C4101: “s”: 未引用的局部变量
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(240): warning C4101: “total_size”: 未引用的局部变量
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(284): warning C4244: “=”: 从“SOCKET”转换到“int”，可能丢失数据
+c:\users\沈子衿\desktop\工程与源代码\winserver\winserver\server.cpp(311): warning C4244: “=”: 从“SOCKET”转换到“int”，可能丢失数据
+  main.cpp
+  正在生成代码...
+  WinServer.vcxproj -> C:\Users\沈子衿\Desktop\工程与源代码\WinServer\x64\Debug\WinServer.exe

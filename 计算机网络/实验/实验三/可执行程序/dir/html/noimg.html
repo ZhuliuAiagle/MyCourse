@@ -1,0 +1,31 @@
+<html>
+<head><title>Test</title></head>
+<body>
+<h1>This is a test</h1>
+<!-- <img src="../img/test.jpg"> -->
+Login:<input id = "lg" name="login">
+Pass:<input id = "ps" name="pass">
+<form method="POST">
+    <button onclick="postTo()">login</button>
+    <script>
+        async function postTo(){
+            var url = "http://localhost:80";
+            let fst = document.getElementById("lg").value;
+            let scd = document.getElementById("ps").value;
+            str= "login="+fst+"&pass="+scd;
+            let options = {
+                method : "POST",
+                body:str
+            }
+            try{
+                let response = await fetch(url, options);
+                let data = await response.text();
+                console.log(data);
+                document.write(data)
+            }catch(e){ 
+            console.log("error") 
+            }
+        }
+    </script>
+</body>
+</html>
