@@ -1,3 +1,0 @@
-Subject: delivery status notification
-- these recipients of your message have been processed by the mail server :
-antoniobdantas @ zipmail . com . br ; failed ; 4 . 4 . 7 ( delivery time expired )

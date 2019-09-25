@@ -1,0 +1,261 @@
+%
+% 6.006 problem set 5
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{trees}
+
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{caption}
+\captionsetup{hypcap=true}
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer:}
+}
+
+\newcommand{\collaborators}{ \textbf{Collaborators:}
+%%% COLLABORATORS START %%%
+
+\tabT Name: Shen Zijin
+
+\tabT Student ID: 3160104734
+%%% COLLABORATORS END %%%
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+\begin{enumerate}
+	\item When training set is 10, the training error rate is 0, testing error rate is 10.5700\%. 
+		\\When training set is 100, the training error rate is 0, testing error rate is 1.2600\%.
+	\item When training set is 10, the average time of iteration is 5.
+		\\When training set is 100, the average time of iteration is 31.
+	\item Since the training data is not linearly separable, the algorithm will loop endless.
+
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{assets/1_2.eps}
+	\caption{The plotting result for perceptron when nTest = 10.}
+	\label{figure1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{assets/1_1.eps}
+	\caption{The plotting result for perceptron when nTest = 100.}
+	\label{figure1}
+\end{figure}
+
+
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+\begin{enumerate}
+	\item When training set is 100, the training error rate is 3.9630\%, testing error rate is 4.8720\%.
+	\item If the training data is noisy and not linearly separable(nTrain=100), the training error rate is 13.6700\%, testing error rate is 14.9010\%.
+	\item For poly-case WITHOUT transformation, the training error rate is 49.0000\%, testing error rate is 54.9600\%.
+	\item For poly-case WITH transformation, the training error rate is 5.0000\%, testing error rate is 6.6000\%.
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{assets/2_1.eps}
+	\caption{The plotting result for linear regression.}
+	\label{figure3}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{assets/2_2.eps}
+	\caption{The plotting result for linear regression when training data is not linearly seperable.}
+	\label{figure4}
+\end{figure}
+
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+
+\newcommand{\answerIc}{ \answer
+	%%% PROBLEM 1(c) ANSWER START %%%
+	\begin{enumerate}
+		\item When training set is 100, the training error rate is 0.3300\%, testing error rate is 1.2300\%.
+		\item If the training data is noisy and not linearly separable(nTrain=100), the training error rate is 12.7600\%, testing error rate is 13.9067\%.
+	\end{enumerate}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{assets/3_1.eps}
+		\caption{The plotting result for logistic regression.}
+		\label{figure5}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{assets/3_2.eps}
+		\caption{The plotting result for logistic regression when training data is not linearly seperable.}
+		\label{figure6}
+	\end{figure}
+	%%% PROBLEM 1(c) ANSWER END %%%
+}
+
+\newcommand{\answerId}{ \answer
+	%%% PROBLEM 1(d) ANSWER START %%%
+	\begin{enumerate}
+		\item When training set is 30, the training error rate is 0, testing error rate is 3.3867\%.
+		\item When training set is 100, the training error rate is 0.0060\%, testing error rate is 0.9880\%.
+		\item When training set is 100, the average time of iteration is 3.
+	\end{enumerate}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{assets/4_1.eps}
+		\caption{The plotting result for SVM when nTrain is 30.}
+		\label{figure7}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{assets/4_2.eps}
+		\caption{The plotting result for SVM when nTrain is 100.}
+		\label{figure8}
+	\end{figure}
+	%%% PROBLEM 1(d) ANSWER END %%%
+}
+
+\newcommand{\answerIIa}{ \answer
+	%%% PROBLEM 2(a) ANSWER START %%%
+	\begin{enumerate}
+		\item The $\lambda$ chosen by LOOCV is 100.
+		\item With regularzation,  0.1332, Without regularzation, 1.0256.
+		\item With regularization, ETrain: 0,ETest, 5.9769\%.
+			\\Without regularization, ETrain: 0,ETest, 12.6067\%.
+	\end{enumerate}
+	%%% PROBLEM 2(a) ANSWER END %%%
+}
+
+
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+	\begin{enumerate}
+		\item The $\lambda$ chosen by LOOCV is 0.1.
+		\item With regularization: ETrain: 0, ETest: 6.0773\%.
+			\\Without regularization:ETrain: 0, ETest: 6.7303\%.
+	\end{enumerate}
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+
+
+
+\newcommand{\answerIIIa}{ \answer 
+%%% PROBLEM 3(a) ANSWER START %%%
+\begin{enumerate}
+	\item False. Bigger the number of training examples will improve the test error of those models with high variance.
+	\item False. Because the training data set is small, models with high variance are more likely to perform worse.
+	\item True.  The more complex the model, the higher the variance.
+	\item False. If the regularization parameter $\lambda$ reaches a certain level, the model tends to be linear and its performance is reduced.
+	\item False. 
+\end{enumerate}
+%%% PROBLEM 3(a) ANSWER END %%%
+
+}
+
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% Fill these in!
+\newcommand{\theproblemsetnum}{2}
+\newcommand{\releasedate}{May 13, 2019}
+\newcommand{\partaduedate}{Thursday, May 30}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Homework \theproblemsetnum}{\releasedate}
+
+%\textbf{Both theory and programming questions} are due {\bf \partaduedate} at
+%{\bf 11:59PM}.
+%
+\collaborators
+%Please download the .zip archive for this problem set, and refer to the
+%\texttt{README.txt} file for instructions on preparing your solutions.
+%
+%We will provide the solutions to the problem set 10 hours after the problem set
+%is due. You will have to read the solutions, and write a brief \textbf{grading
+%explanation} to help your grader understand your write-up. You will need to
+%submit the grading explanation by \textbf{Thursday, November 3rd, 11:59PM}. Your
+%grade will be based on both your solutions and the grading explanation.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \textbf{A Walk Through Linear Models}
+\begin{problemparts}
+\problempart Perceptron
+\answerIa
+
+
+\problempart Linear Regression
+\answerIb
+
+\problempart Logistic Regression
+
+\answerIc
+
+
+\problempart Support Vector Machine
+\answerId
+
+
+\end{problemparts}
+\newpage
+
+\problem \textbf{Regularization and Cross-Validation}
+\begin{problemparts}
+\problempart
+Implement Ridge Regrssion, and use LOOCV to tune the regularization parameter $\lambda$.
+
+
+\answerIIa
+
+\problempart Implement Logistic Regrssion, and use LOOCV to tune the regularization parameter $\lambda$.
+
+\answerIIb
+
+
+\end{problemparts}
+
+\problem \textbf{Bias Variance Trade-off}
+
+Let's review the bias-variance decomposition first. Now please answer the following questions:
+\begin {problemparts}
+\problempart True of False
+
+\answerIIIa
+
+
+\end{problemparts}
+
+
+\end{problems}
+\end{document}
